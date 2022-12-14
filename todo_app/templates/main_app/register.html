@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Page</title>
+</head>
+<body>
+    {% if registered %}
+    <h2>Thank You for Registering!</h2>
+    {% else %}
+    <h2>Register Here :</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ user_form.as_p }}
+        {{ user_profile_form.as_p }}
+        <input type="submit" value="Register">
+    </form>
+    {% endif %}
+</body>
+</html>
